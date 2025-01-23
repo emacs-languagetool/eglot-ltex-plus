@@ -12,7 +12,7 @@
 
 ## 💾 Quickstart
 
-### 🔍 Step 1. Install `LTEX` language server through LTEX's homepage
+### 🔍 Step 1. Install `LTEX+` language server through LTEX+'s homepage
 > Link https://github.com/ltex-plus/ltex-ls-plus
 
 Extract the `.tar.gz` file to any location you want.
