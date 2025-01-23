@@ -1,4 +1,4 @@
-;;; eglot-ltex.el --- Eglot Clients for LTEX+  -*- lexical-binding: t; -*-
+;;; eglot-ltex-plus.el --- Eglot Clients for LTEX+  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021-2025  Shen, Jen-Chieh
 ;; Created date 2021-04-03 00:40:51
@@ -99,5 +99,5 @@ This file is use to activate the language server."
 (add-to-list 'eglot-server-programs
              `(,eglot-ltex-plus-active-modes . eglot-ltex-plus--server-program))
 
-(provide 'eglot-ltex)
-;;; eglot-ltex.el ends here
+(provide 'eglot-ltex-plus)
+;;; eglot-ltex-plus.el ends here
