@@ -8,7 +8,7 @@
 
 [![CI](https://github.com/emacs-languagetool/eglot-ltex-plus/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-languagetool/eglot-ltex-plus/actions/workflows/test.yml)
 
-`Eglot` client leveraging [LTEX Language Server](https://github.com/ltex-plus/ltex-ls-plus).
+`Eglot` client leveraging [LTEX+ Language Server](https://github.com/ltex-plus/ltex-ls-plus).
 
 ## 💾 Quickstart
 
