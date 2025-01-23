@@ -1,19 +1,19 @@
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![JCS-ELPA](https://raw.githubusercontent.com/jcs-emacs/badges/master/elpa/v/eglot-ltex.svg)](https://jcs-emacs.github.io/jcs-elpa/#/eglot-ltex)
+[![JCS-ELPA](https://raw.githubusercontent.com/jcs-emacs/badges/master/elpa/v/eglot-ltex-plus.svg)](https://jcs-emacs.github.io/jcs-elpa/#/eglot-ltex-plus)
 
 <img align="right" src="./etc/logo.png" with="115" height="55">
 
-# eglot-ltex
-> Eglot Clients for LTEX
+# eglot-ltex-plus
+> Eglot Clients for LTEX+
 
-[![CI](https://github.com/emacs-languagetool/eglot-ltex/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-languagetool/eglot-ltex/actions/workflows/test.yml)
+[![CI](https://github.com/emacs-languagetool/eglot-ltex-plus/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-languagetool/eglot-ltex-plus/actions/workflows/test.yml)
 
-`Eglot` client leveraging [LTEX Language Server](https://github.com/valentjn/ltex-ls).
+`Eglot` client leveraging [LTEX Language Server](https://github.com/ltex-plus/ltex-ls-plus).
 
 ## 💾 Quickstart
 
 ### 🔍 Step 1. Install `LTEX` language server through LTEX's homepage
-> Link https://github.com/valentjn/ltex-ls
+> Link https://github.com/ltex-plus/ltex-ls-plus
 
 Extract the `.tar.gz` file to any location you want.
 
@@ -22,14 +22,14 @@ Extract the `.tar.gz` file to any location you want.
 Consider adding this to your configuration.
 
 ```el
-(use-package eglot-ltex
+(use-package eglot-ltex-plus
   :ensure t
   :hook (text-mode . (lambda ()
-                       (require 'eglot-ltex)
+                       (require 'eglot-ltex-plus)
                        (eglot-ensure)))
   :init
-  (setq eglot-ltex-server-path "path/to/ltex-ls-XX.X.X/"
-        eglot-ltex-communication-channel 'stdio))         ; 'stdio or 'tcp
+  (setq eglot-ltex-plus-server-path "path/to/ltex-ls-XX.X.X/"
+        eglot-ltex-plus-communication-channel 'stdio))         ; 'stdio or 'tcp
 ```
 
 ## 🔧 Configuration
@@ -37,15 +37,15 @@ Consider adding this to your configuration.
 Create `.dir-locals.el` file in the project root directory to configure the ltex
 language server, for example:
 
-```el
+```elisp
 ((nil .
-  ((eglot-workspace-configuration
-    . (:ltex-ls  (:language  "en-US"
-                  :additionalRules (:motherTongue "de-DE")))))))
+      ((eglot-workspace-configuration
+        . (:ltex-ls-plus  (:language  "en-US"
+                                      :additionalRules (:motherTongue "de-DE")))))))
 ```
 
 You can find all possible ltex configuration options
-[here](https://valentjn.github.io/vscode-ltex/docs/settings.html). See the
+[here](https://ltex-plus.github.io/ltex-plus/settings.html). See the
 [Eglot manual](https://joaotavora.github.io/eglot/#JSONRPC-objects-in-Elisp) on
 how to translate the LSP options into the property-list format that Eglot
 requires.

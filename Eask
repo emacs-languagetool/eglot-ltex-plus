@@ -1,16 +1,17 @@
-(package "eglot-ltex"
+(package "eglot-ltex-plus"
          "0.1.0"
-         "Eglot Clients for LTEX")
+         "Eglot Clients for LTEX+")
 
-(website-url "https://github.com/emacs-languagetool/eglot-ltex")
+(website-url "https://github.com/emacs-languagetool/eglot-ltex-plus")
 (keywords "convenience" "eglot" "languagetool" "checker")
 
-(package-file "eglot-ltex.el")
+(package-file "eglot-ltex-plus.el")
 
 (script "test" "echo \"Error: no test specified\" && exit 1")
 
-(source "gnu")
-(source "melpa")
+(source 'gnu)
+(source 'melpa)
+(source 'jcs-elpa)
 
 (depends-on "emacs" "24.3")
 (depends-on "eglot")

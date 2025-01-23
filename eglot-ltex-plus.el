@@ -1,10 +1,10 @@
-;;; eglot-ltex.el --- Eglot Clients for LTEX  -*- lexical-binding: t; -*-
+;;; eglot-ltex.el --- Eglot Clients for LTEX+  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2021-2025  Shen, Jen-Chieh
 ;; Created date 2021-04-03 00:40:51
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; URL: https://github.com/emacs-languagetool/eglot-ltex
+;; URL: https://github.com/emacs-languagetool/eglot-ltex-plus
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "24.3") (eglot "1.4") (f "0.20.0"))
 ;; Keywords: convenience eglot languagetool checker
@@ -26,7 +26,7 @@
 
 ;;; Commentary:
 ;;
-;; Eglot Clients for LTEX.
+;; Eglot Clients for LTEX+.
 ;;
 
 ;;; Code:
@@ -36,15 +36,15 @@
 (require 'eglot)
 (require 'f)
 
-(defgroup eglot-ltex nil
-  "Settings for the LTEX Language Server.
+(defgroup eglot-ltex-plus nil
+  "Settings for the LTEX+ Language Server.
 
-https://github.com/valentjn/ltex-ls"
-  :prefix "eglot-ltex-"
+https://github.com/ltex-plus/ltex-ls-plus"
+  :prefix "eglot-ltex-plus-"
   :group 'eglot
-  :link '(url-link :tag "Github" "https://github.com/emacs-languagetool/eglot-ltex"))
+  :link '(url-link :tag "Github" "https://github.com/emacs-languagetool/eglot-ltex-plus"))
 
-(defcustom eglot-ltex-active-modes
+(defcustom eglot-ltex-plus-active-modes
   ;; Language ids can be found here:
   ;; https://github.com/valentjn/ltex-ls/blob/7c031d792110a824951aa003acd3ada158a515b4/src/main/kotlin/org/bsplines/ltexls/parsing/CodeFragmentizer.kt#L46
   '((org-mode :language-id "org")
@@ -66,38 +66,38 @@ https://github.com/valentjn/ltex-ls"
   :type 'list
   :group 'eglot-ltex)
 
-(defcustom eglot-ltex-server-path ""
-  "The root path of the LTEX language server's folder, or path to the executable."
+(defcustom eglot-ltex-plus-server-path ""
+  "The root path of the LTEX+ language server's folder, or path to the executable."
   :type 'string
   :group 'eglot-ltex)
 
-(defcustom eglot-ltex-communication-channel 'stdio
+(defcustom eglot-ltex-plus-communication-channel 'stdio
   "Type of the communication channel."
   :type '(choice (const :tag "Standard IO" stdio)
                  (const :tag "TCP/socket" tcp))
   :group 'eglot-ltex)
 
-(defun eglot-ltex--server-entry ()
+(defun eglot-ltex-plus--server-entry ()
   "Return the server entry file.
 
 This file is use to activate the language server."
   (let ((program-basename (if (eq system-type 'windows-nt)
-                               "ltex-ls.bat"
+                              "ltex-ls.bat"
                             "ltex-ls")))
-    (pcase eglot-ltex-server-path
-      ((pred f-file?) eglot-ltex-server-path)
-      ((pred f-dir?) (f-join eglot-ltex-server-path "bin" program-basename))
+    (pcase eglot-ltex-plus-server-path
+      ((pred f-file?) eglot-ltex-plus-server-path)
+      ((pred f-dir?) (f-join eglot-ltex-plus-server-path "bin" program-basename))
       ("" (executable-find program-basename))
-      (_ (user-error "eglot-ltex-server-path is invalid or points to a nonexistant file: " eglot-ltex-server-path)))))
+      (_ (user-error "eglot-ltex-plus-server-path is invalid or points to a nonexistant file: " eglot-ltex-plus-server-path)))))
 
-(defun eglot-ltex--server-program (_interactive _project)
-  (pcase eglot-ltex-communication-channel
-    ('stdio `(,(eglot-ltex--server-entry)))
-    ('tcp `(,(eglot-ltex--server-entry) "--server-type" "TcpSocket" "--port" :autoport))
-    (_ (user-error "Invalid communication channel type: %s" eglot-ltex-communication-channel))))
+(defun eglot-ltex-plus--server-program (_interactive _project)
+  (pcase eglot-ltex-plus-communication-channel
+    ('stdio `(,(eglot-ltex-plus--server-entry)))
+    ('tcp `(,(eglot-ltex-plus--server-entry) "--server-type" "TcpSocket" "--port" :autoport))
+    (_ (user-error "Invalid communication channel type: %s" eglot-ltex-plus-communication-channel))))
 
 (add-to-list 'eglot-server-programs
-             `(,eglot-ltex-active-modes . eglot-ltex--server-program))
+             `(,eglot-ltex-plus-active-modes . eglot-ltex-plus--server-program))
 
 (provide 'eglot-ltex)
 ;;; eglot-ltex.el ends here
