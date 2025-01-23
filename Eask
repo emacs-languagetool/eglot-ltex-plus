@@ -1,5 +1,5 @@
 (package "eglot-ltex-plus"
-         "0.1.0"
+         "0.2.0"
          "Eglot Clients for LTEX+")
 
 (website-url "https://github.com/emacs-languagetool/eglot-ltex-plus")
