@@ -6,7 +6,7 @@
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; URL: https://github.com/emacs-languagetool/eglot-ltex-plus
 ;; Version: 0.2.0
-;; Package-Requires: ((emacs "24.3") (eglot "1.4") (f "0.20.0"))
+;; Package-Requires: ((emacs "29.1") (eglot "1.4") (f "0.20.0"))
 ;; Keywords: convenience eglot languagetool checker
 
 ;; This file is NOT part of GNU Emacs.
@@ -63,7 +63,7 @@ https://github.com/ltex-plus/ltex-ls-plus"
     (rst-mode :language-id "restructuredtext")
     (text-mode :language-id "plaintext"))
   "List of major mode that work with LanguageTool."
-  :type 'list
+  :type '(list symbol)
   :group 'eglot-ltex)
 
 (defcustom eglot-ltex-plus-server-path ""
