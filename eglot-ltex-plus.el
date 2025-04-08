@@ -66,18 +66,18 @@ https://github.com/ltex-plus/ltex-ls-plus"
     (text-mode :language-id "plaintext"))
   "List of major mode that work with LanguageTool."
   :type '(list symbol)
-  :group 'eglot-ltex)
+  :group 'eglot-ltex-plus)
 
 (defcustom eglot-ltex-plus-server-path ""
   "The root path of the LTEX+ language server's folder, or path to the executable."
   :type 'string
-  :group 'eglot-ltex)
+  :group 'eglot-ltex-plus)
 
 (defcustom eglot-ltex-plus-communication-channel 'stdio
   "Type of the communication channel."
   :type '(choice (const :tag "Standard IO" stdio)
                  (const :tag "TCP/socket" tcp))
-  :group 'eglot-ltex)
+  :group 'eglot-ltex-plus)
 
 (defun eglot-ltex-plus--server-entry ()
   "Return the server entry file.
