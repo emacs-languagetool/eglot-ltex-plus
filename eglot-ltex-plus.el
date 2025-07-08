@@ -61,6 +61,7 @@ https://github.com/ltex-plus/ltex-ls-plus"
     (LaTeX-mode :language-id "latex") ;; AUCTeX
     (markdown-mode :language-id "markdown")
     (rst-mode :language-id "restructuredtext")
+    (typst-ts-mode :language-id "typst")
     (message-mode :language-id "plaintext")
     (mu4e-compose-mode :language-id "plaintext")
     (text-mode :language-id "plaintext"))
