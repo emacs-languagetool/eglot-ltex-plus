@@ -86,8 +86,8 @@ https://github.com/ltex-plus/ltex-ls-plus"
 
 This file is use to activate the language server."
   (let ((program-basename (if (eq system-type 'windows-nt)
-                              "ltex-ls.bat"
-                            "ltex-ls")))
+                              "ltex-ls-plus.bat"
+                            "ltex-ls-plus")))
     (pcase eglot-ltex-plus-server-path
       ((pred f-file?) eglot-ltex-plus-server-path)
       ((pred f-dir?) (f-join eglot-ltex-plus-server-path "bin" program-basename))
